@@ -1,0 +1,50 @@
+<div class="container py-5">
+    <h2 class="mb-4 text-center">Available Restaurants</h2>
+    <div class="row g-4" id="restaurantCards">
+  
+      <!-- Card 1 -->
+      
+  
+      <!-- Card 2 -->
+      
+  
+      <!-- Card 3 -->
+      
+  
+      <!-- Add more cards as needed -->
+  
+    </div>
+  </div>
+  
+  <script>
+    (()=>{
+    const apiUrl = "http://localhost:8080/api";
+  const restaurantCards=document.getElementById("restaurantCards");
+  fetch(`${apiUrl}/restaurants`)
+    .then(res => res.json())
+    .then(data => {
+      allRestaurants = data;
+      renderCards(data);
+    });
+
+function renderCards(restaurants){
+
+  restaurantCards.innerHTML="";
+  restaurants.forEach(rest => {
+    restaurantCards.innerHTML+=`
+    <div class="col-md-6 col-lg-4">
+        <div class="card restaurant-card shadow-sm">
+          <img src="https://source.unsplash.com/400x200/?pizza,restaurant" class="card-img-top restaurant-img" alt="Restaurant Image">
+          <div class="card-body">
+            <h5 class="card-title">${rest.restaurantName}</h5>
+            <p class="card-text">Delicious wood-fired pizzas with gourmet toppings. Perfect for pizza lovers!</p>
+            <a href="#" class="btn btn-primary  view-btn"  onclick="storeAndNavigate(${rest.id})" >View Menu</a>
+          </div
+        </div>
+        </div>
+       `
+});
+
+}
+    })()
+  </script>

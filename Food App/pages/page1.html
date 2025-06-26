@@ -1,0 +1,208 @@
+<h2 class="mb-4">Restaurant Management</h2>
+
+  <form id="restaurantForm" class="mb-4">
+    
+    <div class="mb-3">
+      <label for="restaurantName" class="form-label">Restaurant Name</label>
+      <input type="text" class="form-control" id="restaurantName" required minlength="2">
+      <div class="invalid-feedback">Please enter a valid restaurant name.</div>
+    </div>
+    <div class="mb-3">
+      <label for="location" class="form-label">Location</label>
+      <input type="text" class="form-control" id="location" required minlength="2">
+      <div class="invalid-feedback">Location must be at least 2 characters long.</div>
+    </div>
+    <div class="mb-3">
+      <label for="contact" class="form-label">Contact</label>
+      <input type="tel" class="form-control" id="contact"  required  pattern="^[789]\d{9}$">
+      <div class="invalid-feedback">Enter a valid 10-digit contact number.</div>
+    </div>
+  
+    <button type="submit" class="btn btn-primary" id="submitBtn">Add Restaurant</button>
+  </form>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Contact</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="restaurantTableBody1">
+      
+    </tbody>
+  </table>
+
+  <script>
+    (()=>{
+    const form1 = document.getElementById("restaurantForm");
+const apiUrl = "http://localhost:3000/restaurants";
+const restaurantNameInput1 = document.getElementById("restaurantName");
+const locationInput1 = document.getElementById("location");
+const contactInput1 = document.getElementById("contact");
+const submitBtn1 = document.getElementById("submitBtn");
+
+let allRestaurants1 = [];
+let editId1 = null;
+let sortDirection1 = 1;
+
+function fetchAndRenderRestaurants1() {
+  fetch(apiUrl)
+    .then(res => res.json())
+    .then(data => {
+      allRestaurants1 = data;
+      renderRestaurants1(data);
+    });
+}
+
+function renderRestaurants1(restaurants) {
+  const tbody = document.getElementById("restaurantTableBody1");
+  tbody.innerHTML = "";
+
+  restaurants.forEach(rest => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${rest.restaurantName}</td>
+      <td>${rest.location}</td>
+      <td>${rest.contact}</td>
+      <td>
+        <button class="btn btn-sm btn-outline-primary me-1 edit-btn1" data-id="${rest.id}">
+          <i class="bi bi-pencil-square"></i>
+        </button>
+        <button class="btn btn-sm btn-outline-danger delete-btn1" data-id="${rest.id}">
+          <i class="bi bi-trash"></i>
+        </button>
+      </td>
+    `;
+    tbody.appendChild(row);
+  });
+
+  document.querySelectorAll(".edit-btn1").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const id = btn.getAttribute("data-id");
+      loadRestaurantForEdit1(id);
+    });
+  });
+
+  document.querySelectorAll(".delete-btn1").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const id = btn.getAttribute("data-id");
+      deleteRestaurant1(id);
+    });
+  });
+}
+
+function validateName1() {
+  if (restaurantNameInput1.value.trim().length >= 5) {
+    restaurantNameInput1.classList.add("is-valid");
+    restaurantNameInput1.classList.remove("is-invalid");
+    return true;
+  } else {
+    restaurantNameInput1.classList.add("is-invalid");
+    restaurantNameInput1.classList.remove("is-valid");
+    return false;
+  }
+}
+
+function validateLocation1() {
+  if (locationInput1.value.trim().length >= 1) {
+    locationInput1.classList.add("is-valid");
+    locationInput1.classList.remove("is-invalid");
+    return true;
+  } else {
+    locationInput1.classList.add("is-invalid");
+    locationInput1.classList.remove("is-valid");
+    return false;
+  }
+}
+
+function validateContact1() {
+  const mobileRegex = /^[789]\d{9}$/;
+  if (mobileRegex.test(contactInput1.value.trim())) {
+    contactInput1.classList.add("is-valid");
+    contactInput1.classList.remove("is-invalid");
+    return true;
+  } else {
+    contactInput1.classList.add("is-invalid");
+    contactInput1.classList.remove("is-valid");
+    return false;
+  }
+}
+
+restaurantNameInput1.addEventListener("blur", validateName1);
+locationInput1.addEventListener("blur", validateLocation1);
+contactInput1.addEventListener("blur", validateContact1);
+
+form1.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const valid1 = validateName1() && validateContact1() && validateLocation1();
+
+  if (!valid1) return;
+
+  const restaurant = {
+    restaurantName: restaurantNameInput1.value.trim(),
+    location: locationInput1.value.trim(),
+    contact: contactInput1.value.trim(),
+  };
+
+  if (editId1) {
+    fetch(`${apiUrl}/${editId1}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(restaurant)
+    }).then(() => {
+      fetchAndRenderRestaurants1();
+      form1.reset();
+      editId1 = null;
+      submitBtn1.textContent = "Add Restaurant";
+    });
+  } else {
+    fetch(apiUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(restaurant)
+    }).then(() => {
+      fetchAndRenderRestaurants1();
+      form1.reset();
+    });
+  }
+});
+
+function deleteRestaurant1(id) {
+  if (confirm("Are you sure you want to delete this restaurant?")) {
+    fetch(`${apiUrl}/${id}`, {
+      method: "DELETE"
+    }).then(() => fetchAndRenderRestaurants1());
+  }
+}
+
+function loadRestaurantForEdit1(id) {
+  fetch(`${apiUrl}/${id}`)
+    .then(res => res.json())
+    .then(data => {
+      restaurantNameInput1.value = data.restaurantName;
+      locationInput1.value = data.location;
+      contactInput1.value = data.contact;
+
+      editId1 = id;
+      submitBtn1.textContent = "Update Restaurant";
+    });
+}
+
+document.querySelector("th:nth-child(2)").style.cursor = "pointer";
+document.querySelector("th:nth-child(2)").addEventListener("click", () => {
+  const sorted = [...allRestaurants1].sort((a, b) =>
+    a.restaurantName.localeCompare(b.restaurantName) * sortDirection1
+  );
+  sortDirection1 *= -1;
+  renderRestaurants1(sorted);
+});
+
+
+
+fetchAndRenderRestaurants1();
+})()
+    </script>
+    

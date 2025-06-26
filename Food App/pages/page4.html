@@ -1,0 +1,87 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#" onclick="loadPage('dashboard.html')">Dashboard</a></li>
+      <li class="breadcrumb-item"><a href="#" onclick="loadPage('page4.html')">Settings</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Page 4</li>
+    </ol>
+  </nav>
+  
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Customer Orders</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    tr:hover {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <h1>Customer Order History</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Order Date</th>
+        <th>Total Amount (₹)</th>
+        <th>Restaurant Id</th>
+        
+      </tr>
+    </thead>
+    <tbody id="ordersTableBody">
+      <!-- Order rows will be inserted here -->
+    </tbody>
+  </table>
+
+  <script>
+    (()=>{
+    const apiUrl="http://localhost:3000";
+    let allOrders=[];
+    // Sample order data
+    fetch(`${apiUrl}/orders`)
+    .then(res => res.json())
+    .then(data => {
+      allOrders = data;
+      renderRestaurants(data);
+    });
+
+
+    function renderRestaurants(orders){
+    const tableBody = document.getElementById("ordersTableBody");
+    
+    orders.forEach(order => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${order.orderDate}</td>
+        <td>${order.totalAmount}</td>
+        <td>${order.restaurantId}</td>
+      `;
+      tableBody.appendChild(row);
+    });
+  }
+})()
+  </script>
+</body>
+</html>
+
+  

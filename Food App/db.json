@@ -1,0 +1,646 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Atharva Hule",
+      "email": "atharva@example.com",
+      "password": "admin123",
+      "phone": "7350611222",
+      "userType": "Admin"
+    },
+    {
+      "id": "2",
+      "name": "Rohit Sharma",
+      "email": "rohit@example.com",
+      "password": "rohit123",
+      "phone": "9001112233",
+      "userType": "Customer"
+    },
+    {
+      "id": "3",
+      "name": "Priya Desai",
+      "email": "priya@example.com",
+      "password": "priya123",
+      "phone": "9111122233",
+      "userType": "Owner"
+    },
+    {
+      "id": "4",
+      "name": "Aniket Joshi",
+      "email": "aniket@example.com",
+      "password": "aniket123",
+      "phone": "9223344556",
+      "userType": "Customer"
+    },
+    {
+      "id": "5",
+      "name": "Sneha Patil",
+      "email": "sneha@example.com",
+      "password": "sneha123",
+      "phone": "9334455667",
+      "userType": "Owner"
+    },
+    {
+      "id": "7",
+      "name": "Neha Reddy",
+      "email": "neha@example.com",
+      "password": "neha123",
+      "phone": "9556677889",
+      "userType": "Owner"
+    },
+    {
+      "id": "8",
+      "name": "Amit Pawar",
+      "email": "amit@example.com",
+      "password": "amit123",
+      "phone": "9667788990",
+      "userType": "Customer"
+    },
+    {
+      "id": "9",
+      "name": "Megha Nair",
+      "email": "megha@example.com",
+      "password": "megha123",
+      "phone": "9778899001",
+      "userType": "Owner"
+    },
+    {
+      "id": "10",
+      "name": "Yash Verma",
+      "email": "yash@example.com",
+      "password": "yash123",
+      "phone": "9889900112",
+      "userType": "Customer"
+    },
+    {
+      "id": "11",
+      "name": "Isha Gupta",
+      "email": "isha@example.com",
+      "password": "isha123",
+      "phone": "9990011223",
+      "userType": "Owner"
+    },
+    {
+      "id": "12",
+      "name": "Kunal Mehta",
+      "email": "kunal@example.com",
+      "password": "kunal123",
+      "phone": "9011223344",
+      "userType": "Customer"
+    },
+    {
+      "id": "13",
+      "name": "Divya Jain",
+      "email": "divya@example.com",
+      "password": "divya123",
+      "phone": "9122334455",
+      "userType": "Owner"
+    },
+    {
+      "id": "14",
+      "name": "Nikhil Bhosale",
+      "email": "nikhil@example.com",
+      "password": "nikhil123",
+      "phone": "9233445566",
+      "userType": "Customer"
+    }
+   
+  ],
+  "restaurants": [
+    {
+      "id": "1",
+      "restaurantName": "Spice Junction",
+      "location": "Camp",
+      "contact": "9876543210"
+    },
+    {
+      "id": "2",
+      "restaurantName": "Flavors of India",
+      "location": "Bhosari",
+      "contact": "9123456789"
+    },
+    {
+      "id": "3",
+      "restaurantName": "Tandoori Treats",
+      "location": "Pimpri",
+      "contact": "9988776655"
+    },
+    {
+      "id": "4",
+      "restaurantName": "Masala Magic",
+      "location": "Chinchwad",
+      "contact": "9001122334"
+    },
+    {
+      "id": "5",
+      "restaurantName": "Urban Zaika",
+      "location": "Kothrud",
+      "contact": "9090909090"
+    },
+    {
+      "id": "6",
+      "restaurantName": "Royal Rasoi",
+      "location": "Aundh",
+      "contact": "8888777766"
+    },
+    {
+      "id": "7",
+      "restaurantName": "The Curry Bowl",
+      "location": "Baner",
+      "contact": "9876541230"
+    },
+    {
+      "id": "8",
+      "restaurantName": "Desi Tandoor",
+      "location": "Viman Nagar",
+      "contact": "9333322222"
+    },
+    {
+      "id": "9",
+      "restaurantName": "Biryani Factory",
+      "location": "Hinjewadi",
+      "contact": "9444412345"
+    },
+    {
+      "id": "10",
+      "restaurantName": "Chaat Adda",
+      "location": "Shivajinagar",
+      "contact": "9555511111"
+    },
+    {
+      "id": "11",
+      "restaurantName": "Khaati Peeti Rasoi",
+      "location": "Koregaon Park",
+      "contact": "9888899990"
+    },
+    {
+      "id": "12",
+      "restaurantName": "Zest Kitchens",
+      "location": "Wakad",
+      "contact": "9666677777"
+    },
+    {
+      "id": "13",
+      "restaurantName": "Spicy Spoon",
+      "location": "Pashan",
+      "contact": "9111122233"
+    },
+    {
+      "id": "14",
+      "restaurantName": "Ghar Ka Khana",
+      "location": "Sinhagad Road",
+      "contact": "9099999999"
+    },
+    {
+      "id": "15",
+      "restaurantName": "Tadka Tales",
+      "location": "Hadapsar",
+      "contact": "9223344556"
+    },
+    {
+      "id": "16",
+      "restaurantName": "Mirchi Masala",
+      "location": "Katraj",
+      "contact": "9111123456"
+    },
+    {
+      "id": "17",
+      "restaurantName": "The Veg Spot",
+      "location": "Swargate",
+      "contact": "9122233344"
+    },
+    {
+      "id": "18",
+      "restaurantName": "Kitchen Central",
+      "location": "Karve Nagar",
+      "contact": "9234567890"
+    },
+    {
+      "id": "19",
+      "restaurantName": "Zaika Express",
+      "location": "Kharadi",
+      "contact": "9333344444"
+    },
+    {
+      "id": "20",
+      "restaurantName": "Bhojan Ghar",
+      "location": "Bibwewadi",
+      "contact": "9444455555"
+    }
+  ],
+  "foodItems": [
+    {
+      "id": "1",
+      "itemName": "Butter Chicken",
+      "price": 250,
+      "itemType": "Punjabi",
+      "restaurantId": 1
+    },
+    {
+      "id": "2",
+      "itemName": "Paneer Tikka",
+      "price": 200,
+      "itemType": "North Indian",
+      "restaurantId": 2
+    },
+    {
+      "id": "3",
+      "itemName": "Masala Dosa",
+      "price": 100,
+      "itemType": "South Indian",
+      "restaurantId": 3
+    },
+    {
+      "id": "4",
+      "itemName": "Chicken Biryani",
+      "price": 220,
+      "itemType": "Hyderabadi",
+      "restaurantId": 4
+    },
+    {
+      "id": "5",
+      "itemName": "Veg Pulao",
+      "price": 130,
+      "itemType": "Indian",
+      "restaurantId": 5
+    },
+    {
+      "id": "6",
+      "itemName": "Dal Makhani",
+      "price": 180,
+      "itemType": "Punjabi",
+      "restaurantId": 6
+    },
+    {
+      "id": "7",
+      "itemName": "Hakka Noodles",
+      "price": 160,
+      "itemType": "Chinese",
+      "restaurantId": 7
+    },
+    {
+      "id": "8",
+      "itemName": "Chole Bhature",
+      "price": 140,
+      "itemType": "North Indian",
+      "restaurantId": 8
+    },
+    {
+      "id": "9",
+      "itemName": "Pav Bhaji",
+      "price": 110,
+      "itemType": "Street Food",
+      "restaurantId": 9
+    },
+    {
+      "id": "10",
+      "itemName": "Tandoori Roti",
+      "price": 25,
+      "itemType": "Indian",
+      "restaurantId": 10
+    },
+    {
+      "id": "11",
+      "itemName": "Lassi",
+      "price": 60,
+      "itemType": "Beverage",
+      "restaurantId": 11
+    },
+    {
+      "id": "12",
+      "itemName": "Rajma Chawal",
+      "price": 120,
+      "itemType": "Indian",
+      "restaurantId": 12
+    },
+    {
+      "id": "13",
+      "itemName": "Mix Veg",
+      "price": 150,
+      "itemType": "Indian",
+      "restaurantId": 13
+    },
+    {
+      "id": "14",
+      "itemName": "Gulab Jamun",
+      "price": 50,
+      "itemType": "Dessert",
+      "restaurantId": 14
+    },
+    {
+      "id": "15",
+      "itemName": "Chicken 65",
+      "price": 200,
+      "itemType": "South Indian",
+      "restaurantId": 15
+    },
+    {
+      "id": "16",
+      "itemName": "Idli Sambar",
+      "price": 90,
+      "itemType": "South Indian",
+      "restaurantId": 16
+    },
+    {
+      "id": "17",
+      "itemName": "Sev Puri",
+      "price": 70,
+      "itemType": "Street Food",
+      "restaurantId": 17
+    },
+    {
+      "id": "18",
+      "itemName": "Moong Dal Halwa",
+      "price": 90,
+      "itemType": "Dessert",
+      "restaurantId": 18
+    },
+    {
+      "id": "19",
+      "itemName": "Veg Thali",
+      "price": 180,
+      "itemType": "Indian",
+      "restaurantId": 19
+    },
+    {
+      "id": "20",
+      "itemName": "Kadhai Paneer",
+      "price": 190,
+      "itemType": "North Indian",
+      "restaurantId": 20
+    },
+    {
+      "id": "21",
+      "itemName": "Shev Bhaji",
+      "price": 100,
+      "itemType": "Maharashtrian",
+      "restaurantId": 11
+    },
+    {
+      "id": "22",
+      "itemName": "Misal Pav",
+      "price": 90,
+      "itemType": "Maharashtrian",
+      "restaurantId": 2
+    },
+    {
+      "id": "23",
+      "itemName": "Shrikhand",
+      "price": 70,
+      "itemType": "Dessert",
+      "restaurantId": 3
+    },
+    {
+      "id": "24",
+      "itemName": "Chicken Curry",
+      "price": 210,
+      "itemType": "Indian",
+      "restaurantId": 4
+    },
+    {
+      "id": "25",
+      "itemName": "Biryani Combo",
+      "price": 270,
+      "itemType": "Combo",
+      "restaurantId": 5
+    },
+    {
+      "id": "26",
+      "itemName": "Mango Lassi",
+      "price": 65,
+      "itemType": "Beverage",
+      "restaurantId": 6
+    },
+    {
+      "id": "27",
+      "itemName": "Veg Burger",
+      "price": 90,
+      "itemType": "Fast Food",
+      "restaurantId": 11
+    },
+    {
+      "id": "28",
+      "itemName": "Aloo Paratha",
+      "price": 60,
+      "itemType": "North Indian",
+      "restaurantId": 13
+    },
+    {
+      "id": "29",
+      "itemName": "Paneer Bhurji",
+      "price": 150,
+      "itemType": "Indian",
+      "restaurantId": 13
+    },
+    {
+      "id": "30",
+      "itemName": "Jeera Rice",
+      "price": 100,
+      "itemType": "Indian",
+      "restaurantId": 13
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "userId": 2,
+      "orderDate": "2025-04-15",
+      "totalAmount": 460,
+      "restaurantId": 4
+    },
+    {
+      "id": "2",
+      "userId": 4,
+      "orderDate": "2025-04-16",
+      "totalAmount": 320,
+      "restaurantId": 7
+    },
+    {
+      "id": "3",
+      "userId": 6,
+      "orderDate": "2025-04-17",
+      "totalAmount": 540,
+      "restaurantId": 4
+    },
+    {
+      "id": "4",
+      "userId": 8,
+      "orderDate": "2025-04-18",
+      "totalAmount": 210,
+      "restaurantId": 1
+    },
+    {
+      "id": "5",
+      "userId": 10,
+      "orderDate": "2025-04-19",
+      "totalAmount": 390,
+      "restaurantId": 15
+    },
+    {
+      "id": "6",
+      "userId": 12,
+      "orderDate": "2025-04-13",
+      "totalAmount": 270,
+      "restaurantId": 7
+    },
+    {
+      "id": "7",
+      "userId": 14,
+      "orderDate": "2025-04-12",
+      "totalAmount": 300,
+      "restaurantId": 12
+    },
+    {
+      "id": "8",
+      "userId": 15,
+      "orderDate": "2025-04-11",
+      "totalAmount": 460,
+      "restaurantId": 8
+    },
+    {
+      "id": "9",
+      "userId": 6,
+      "orderDate": "2025-04-10",
+      "totalAmount": 330,
+      "restaurantId": 4
+    },
+    {
+      "id": "10",
+      "userId": 4,
+      "orderDate": "2025-04-09",
+      "totalAmount": 210,
+      "restaurantId": 6
+    },
+    {
+      "id": "11",
+      "userId": 8,
+      "orderDate": "2025-04-08",
+      "totalAmount": 390,
+      "restaurantId": 3
+    },
+    {
+      "id": "12",
+      "userId": 10,
+      "orderDate": "2025-04-07",
+      "totalAmount": 240,
+      "restaurantId": 13
+    },
+    {
+      "id": "13",
+      "userId": 12,
+      "orderDate": "2025-04-06",
+      "totalAmount": 480,
+      "restaurantId": 1
+    },
+    {
+      "id": "14",
+      "userId": 14,
+      "orderDate": "2025-04-05",
+      "totalAmount": 510,
+      "restaurantId": 7
+    },
+    {
+      "id": "15",
+      "userId": 15,
+      "orderDate": "2025-04-04",
+      "totalAmount": 290,
+      "restaurantId": 4
+    }
+    
+   
+   
+    
+  ],
+  "orderItems": [
+    {
+      "id": "1",
+      "orderId": 1,
+      "foodItemId": 1,
+      "quantity": 1
+    },
+    {
+      "id": "2",
+      "orderId": 1,
+      "foodItemId": 2,
+      "quantity": 1
+    },
+    {
+      "id": "3",
+      "orderId": 2,
+      "foodItemId": 4,
+      "quantity": 1
+    },
+    {
+      "id": "4",
+      "orderId": 3,
+      "foodItemId": 5,
+      "quantity": 2
+    },
+    {
+      "id": "5",
+      "orderId": 4,
+      "foodItemId": 8,
+      "quantity": 1
+    },
+    {
+      "id": "6",
+      "orderId": 5,
+      "foodItemId": 11,
+      "quantity": 2
+    },
+    {
+      "id": "7",
+      "orderId": 6,
+      "foodItemId": 15,
+      "quantity": 2
+    },
+    {
+      "id": "8",
+      "orderId": 7,
+      "foodItemId": 19,
+      "quantity": 1
+    },
+    {
+      "id": "9",
+      "orderId": 8,
+      "foodItemId": 20,
+      "quantity": 1
+    },
+    {
+      "id": "10",
+      "orderId": 9,
+      "foodItemId": 24,
+      "quantity": 1
+    },
+    {
+      "id": "11",
+      "orderId": 10,
+      "foodItemId": 27,
+      "quantity": 2
+    },
+    {
+      "id": "12",
+      "orderId": 11,
+      "foodItemId": 29,
+      "quantity": 1
+    },
+    {
+      "id": "13",
+      "orderId": 12,
+      "foodItemId": 30,
+      "quantity": 1
+    },
+    {
+      "id": "14",
+      "orderId": 13,
+      "foodItemId": 18,
+      "quantity": 2
+    },
+    {
+      "id": "15",
+      "orderId": 14,
+      "foodItemId": 12,
+      "quantity": 1
+    }
+]
+}

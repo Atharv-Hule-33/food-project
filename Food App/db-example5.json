@@ -1,0 +1,85 @@
+{
+    "users": [
+      {
+        "userId": 1,
+        "name": "Amit Sharma",
+        "email": "amit.sharma@example.com",
+        "password": "pass123",
+        "phone": "9876543210",
+        "userType": "ADMIN"
+      },
+      {
+        "userId": 2,
+        "name": "Priya Mehta",
+        "email": "priya.mehta@example.com",
+        "password": "priya456",
+        "phone": "9876543211",
+        "userType": "NORMAL"
+      },
+      {
+        "userId": 3,
+        "name": "Rohit Kapoor",
+        "email": "rohit.kapoor@example.com",
+        "password": "rohit789",
+        "phone": "9876543212",
+        "userType": "NORMAL"
+      },
+      {
+        "userId": 4,
+        "name": "Neha Verma",
+        "email": "neha.verma@example.com",
+        "password": "neha321",
+        "phone": "9876543213",
+        "userType": "ADMIN"
+      },
+      {
+        "userId": 5,
+        "name": "Suresh Patil",
+        "email": "suresh.patil@example.com",
+        "password": "suresh123",
+        "phone": "9876543214",
+        "userType": "NORMAL"
+      },
+      {
+        "userId": 6,
+        "name": "Anjali Singh",
+        "email": "anjali.singh@example.com",
+        "password": "anjali123",
+        "phone": "9876543215",
+        "userType": "ADMIN"
+      },
+      {
+        "userId": 7,
+        "name": "Deepak Joshi",
+        "email": "deepak.joshi@example.com",
+        "password": "deepak321",
+        "phone": "9876543216",
+        "userType": "NORMAL"
+      },
+      {
+        "userId": 8,
+        "name": "Kavita Rao",
+        "email": "kavita.rao@example.com",
+        "password": "kavita456",
+        "phone": "9876543217",
+        "userType": "NORMAL"
+      },
+      {
+        "userId": 9,
+        "name": "Manoj Kulkarni",
+        "email": "manoj.kulkarni@example.com",
+        "password": "manoj789",
+        "phone": "9876543218",
+        "userType": "ADMIN"
+      },
+      {
+        "userId": 10,
+        "name": "Swati Desai",
+        "email": "swati.desai@example.com",
+        "password": "swati123",
+        "phone": "9876543219",
+        "userType": "NORMAL"
+      }
+    ]
+  }
+  

@@ -1,0 +1,20 @@
+.sidebar .nav-link:hover {
+    background-color: #495057;
+    border-radius: 5px;
+  }
+  .restaurant-card {
+    transition: box-shadow 0.3s ease-in-out, transform 0.2s ease;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  .restaurant-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+  }
+
+  .restaurant-img {
+    height: 200px;
+    object-fit: cover;
+  }
+  

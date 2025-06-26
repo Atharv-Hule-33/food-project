@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Summary</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    #orderDetails, #orderItems {
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Your Order Summary</h2>
+
+    <div id="orderDetails">
+      <!-- Order ID, User ID, Total Amount, and Date will go here -->
+    </div>
+
+    <h3>Ordered Items</h3>
+    <div id="orderItems">
+      <!-- Items will be listed here -->
+    </div>
+  </div>
+
+  <script>
+    const apiUrl = "http://localhost:3000"; // Replace with actual API base URL
+
+    document.addEventListener("DOMContentLoaded", function() {
+      const orderId = sessionStorage.getItem("orderId");
+
+      if (orderId) {
+        fetch(`${apiUrl}/orders/${orderId}`)
+          .then(res => res.json())
+          .then(order => {
+            const orderDetailsElement = document.getElementById("orderDetails");
+            orderDetailsElement.innerHTML = `
+              <h3>Order ID: ${order.id}</h3>
+              <p>User ID: ${order.userId}</p>
+              <p>Total Amount: $${order.totalAmount}</p>
+              <p>Order Date: ${new Date(order.orderDate).toLocaleString()}</p>
+            `;
+
+            fetch(`${apiUrl}/orderItems?orderId=${order.id}`)
+              .then(res => res.json())
+              .then(orderItems => {
+                const orderItemsElement = document.getElementById("orderItems");
+                orderItems.forEach(item => {
+                  orderItemsElement.innerHTML += `
+                    <p>Item Name: ${item.itemName}, Quantity: ${item.quantity}</p>
+                  `;
+                });
+              });
+          })
+          .catch(err => {
+            console.error("Error fetching order details:", err);
+            alert("Failed to load order details.");
+          });
+      } else {
+        alert("Order not found.");
+      }
+    });
+  </script>
+</body>
+</html>
