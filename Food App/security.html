@@ -1,0 +1,62 @@
+<div class="container py-5">
+    <h2 class="mb-4 text-center">Available Restaurants</h2>
+    <div class="row g-4" id="restaurantCards">
+      <!-- Cards will be rendered here -->
+    </div>
+  </div>
+  
+  <script>
+  (() => {
+    const apiUrl = "http://localhost:8080/api";
+    const restaurantCards = document.getElementById("restaurantCards");
+  
+    // 🔐 Basic Auth credentials (replace with actual values from Postman or backend DB)
+    const username = 'user1';
+    const password = 'user1';
+    const basicAuth = btoa(`${username}:${password}`);
+  
+    // 🔁 Fetch restaurants with Basic Auth
+    fetch(`${apiUrl}/restaurants`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Basic ${basicAuth}`,
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        allRestaurants = data;
+        renderCards(data);
+      })
+      .catch(error => console.error('Fetch error:', error));
+  
+    function renderCards(restaurants) {
+      restaurantCards.innerHTML = "";
+      restaurants.forEach(rest => {
+        restaurantCards.innerHTML += `
+          <div class="col-md-6 col-lg-4">
+            <div class="card restaurant-card shadow-sm">
+              <img src="https://source.unsplash.com/400x200/?pizza,restaurant" class="card-img-top restaurant-img" alt="Restaurant Image">
+              <div class="card-body">
+                <h5 class="card-title">${rest.restaurantName}</h5>
+                <p class="card-text">Delicious wood-fired pizzas with gourmet toppings. Perfect for pizza lovers!</p>
+                <a href="#" class="btn btn-primary view-btn" onclick="storeAndNavigate(${rest.restaurantId})">View Menu</a>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+    }
+  
+    window.storeAndNavigate = function (restaurantId) {
+      localStorage.setItem("selectedRestaurantId", restaurantId);
+      window.location.href = "/menu.html";
+    };
+  })();
+  </script>
+  
